@@ -1,0 +1,6 @@
+
+public enum TipoCliente {
+
+	EMBARAZADA, ANCIANO, DISCAPACITADO, CON_BEBE, COMUN
+
+}
