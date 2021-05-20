@@ -1,0 +1,13 @@
+nombre: Fabian, apellido: Lagorio, mail: falago@gmail.com
+nombre: Leonardo, apellido: Blautzik, mail: leoblautzik@untef.edu.ar
+nombre: Julian, apellido: Alfonzo, mail: walaf17@gmail.com
+nombre: Martin, apellido: Albarracin, mail: mafranzone@untref.edu.ar
+nombre: Andres, apellido: Juarez, mail: ajuarez@untref.edu.ar
+nombre: Emiliano, apellido: Pellegrino, mail: emiliano.j.pellegrino@gamil.com
+nombre: Luciano, apellido: Pirro, mail: lucho.pirro@gmail.com
+nombre: Lucas, apellido: Ponce de León, mail: lponcedeleon@untref.edu.ar
+nombre: Santiago, apellido: Rojo, mail: tiagox@gmail.com
+nombre: Valeria, apellido: Becker, mail: vbecker@untref.edu.ar
+nombre: Lucas, apellido: Videla, mail: lvidela@untref.edu.ar
+nombre: Alejandro, apellido: Oliveros, mail: aoliveros@untref.edu.ar
+nombre: Leandro,mail: ldoctors@untref.edu.ar, apellido: Doctors
