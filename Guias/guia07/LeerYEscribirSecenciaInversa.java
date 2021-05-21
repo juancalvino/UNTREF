@@ -2,7 +2,6 @@ import java.util.Stack;
 
 public class LeerYEscribirSecenciaInversa {
 
-	@SuppressWarnings("serial")
 	Stack<String> pilaDeStrings = new Stack<String>();
 	
 	String[] datos = {"a","b","c","d"};

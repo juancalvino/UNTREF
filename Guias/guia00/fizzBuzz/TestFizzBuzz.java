@@ -1,7 +1,6 @@
 package fizzBuzz;
 import org.junit.Assert;
 import org.junit.Ignore;
-import org.junit.Test;
 
 public class TestFizzBuzz {
 	FizzBuzz juego = new FizzBuzz();
