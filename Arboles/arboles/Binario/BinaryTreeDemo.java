@@ -1,6 +1,5 @@
 package Binario;
 
-import java.util.List;
 
 public class BinaryTreeDemo {
 
