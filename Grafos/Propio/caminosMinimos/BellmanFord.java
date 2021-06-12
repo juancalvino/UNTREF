@@ -18,8 +18,6 @@ public class BellmanFord {
 	public void calcularCaminoMinimo(Grafo grafo, Vertice origen) {
 		
 		Queue<Vertice> adyacentes = new LinkedList<Vertice>();
-		boolean hayCambios = true;
-		int contador = 0;
 		
 		inicializarListaDeDistanciaMinima(grafo.getColeccionDeAristas().keySet(), origen);
 		
@@ -32,14 +30,8 @@ public class BellmanFord {
 				adyacentes.add(destino);
 			}
 		}
-		
-		
-		while(hayCambios) {
-			hayCambios = false;
-			
-			while(!adyacentes.isEmpty() && contador < grafo.getColeccionDeAristas().size() + 1) {
-				
-				contador++;		
+
+			for(int i=1; i < grafo.getColeccionDeAristas().size(); i++) {
 				Vertice analizado = adyacentes.poll();	
 				
 				for(Arista arista : grafo.getArestasDeSalidaDel(analizado)) {
@@ -53,18 +45,23 @@ public class BellmanFord {
 						listaPredecedores.put(destino.getNombre(), analizado.getNombre());
 						adyacentes.add(destino);
 		
-						hayCambios = true;
 					}
 				}
 			}	
-		}
 			
-		if(contador > grafo.getColeccionDeAristas().size()) {
-			throw new RuntimeException("El grafo tiene ciclos");
-		}
-	} 
-	
-	
+			Vertice analizado = adyacentes.peek();
+			for(Arista arista : grafo.getArestasDeSalidaDel(analizado)) {
+				
+				Vertice destino = arista.getDestino();
+				double nuevaDistancia  = arista.getPeso() + listaDeDistanciaMinima.get(analizado.getNombre());
+				
+				if(nuevaDistancia < listaDeDistanciaMinima.get(destino.getNombre())) {
+					throw new RuntimeException();
+				}
+			}
+	}
+			
+			
 	private void inicializarListaDeDistanciaMinima(Set<String> setVertices, Vertice origen){
 		
 		listaDeDistanciaMinima = new HashMap<String, Double>();
@@ -87,4 +84,5 @@ public class BellmanFord {
 		return listaPredecedores;
 	}
 
-}	
+	
+}
