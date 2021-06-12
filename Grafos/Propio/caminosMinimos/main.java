@@ -41,7 +41,7 @@ public class main {
 
 			
 			
-			System.out.println(grafo.getColeccionDeAristas());
+			System.out.println(grafo.getColeccionDeVectoresConSusAristas());
 			System.out.println(grafo);
 			System.out.println(grafo.calcularGradosDeEntrada());
 			
