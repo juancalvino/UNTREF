@@ -21,7 +21,7 @@ public class Dijkstra {
   
     	 Queue<Vertice> analizados = new LinkedList<Vertice>();
     	 
-    	 listaDeDestinos = grafo.getColeccionDeAristas();
+    	 listaDeDestinos = grafo.getColeccionDeVectoresConSusAristas();
     	 iniciarDistancias(listaDeDestinos);
     	 
     	 listaDistanciaMinima.put(origen.getNombre(), 0.0);

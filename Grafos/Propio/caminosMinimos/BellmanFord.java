@@ -19,7 +19,7 @@ public class BellmanFord {
 		
 		Queue<Vertice> adyacentes = new LinkedList<Vertice>();
 		
-		inicializarListaDeDistanciaMinima(grafo.getColeccionDeAristas().keySet(), origen);
+		inicializarListaDeDistanciaMinima(grafo.getColeccionDeVectoresConSusAristas().keySet(), origen);
 		
 		for(Arista arista : grafo.getArestasDeSalidaDel(origen)) {
 			Vertice destino = arista.getDestino();
@@ -31,7 +31,7 @@ public class BellmanFord {
 			}
 		}
 
-			for(int i=1; i < grafo.getColeccionDeAristas().size(); i++) {
+			for(int i=1; i < grafo.getColeccionDeVectoresConSusAristas().size(); i++) {
 				Vertice analizado = adyacentes.poll();	
 				
 				for(Arista arista : grafo.getArestasDeSalidaDel(analizado)) {
@@ -49,14 +49,16 @@ public class BellmanFord {
 				}
 			}	
 			
-			Vertice analizado = adyacentes.peek();
-			for(Arista arista : grafo.getArestasDeSalidaDel(analizado)) {
-				
-				Vertice destino = arista.getDestino();
-				double nuevaDistancia  = arista.getPeso() + listaDeDistanciaMinima.get(analizado.getNombre());
-				
-				if(nuevaDistancia < listaDeDistanciaMinima.get(destino.getNombre())) {
-					throw new RuntimeException();
+			for(String vertice : grafo.getColeccionDeVectoresConSusAristas().keySet()) {
+			
+				for(Arista arista : grafo.getArestasDeSalidaDel(vertice)) {
+					
+					Vertice destino = arista.getDestino();
+					double nuevaDistancia  = arista.getPeso() + listaDeDistanciaMinima.get(vertice);
+					
+					if(nuevaDistancia < listaDeDistanciaMinima.get(destino.getNombre())) {
+						throw new RuntimeException();
+					}
 				}
 			}
 	}
