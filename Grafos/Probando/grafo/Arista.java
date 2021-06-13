@@ -23,7 +23,8 @@ public class Arista {
 		return getDestino() + "(" + getPeso() + ")";
 		
 	}
-	
+
+
 }
 
 

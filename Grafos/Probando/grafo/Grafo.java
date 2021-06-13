@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Map.Entry;
 
+// TODO Cambiar LinkedList por LinkedHashSet o HashSet, para tener un rendimiento de consulta de O(1)
+
 public class Grafo {
 
 	Map<String, LinkedList<Arista>> coleccionDeVectores = new HashMap<String, LinkedList<Arista>>();
