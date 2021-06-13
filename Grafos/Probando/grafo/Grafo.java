@@ -57,6 +57,10 @@ public class Grafo {
 		return coleccionDeVectores.get(origen.getNombre());
 	}
 	
+	public LinkedList<Arista>  getArestasDeSalidaDel (String origen) {
+		return coleccionDeVectores.get(origen);
+	}
+	
 	@Override
 	public String toString() {
 		return coleccionDeVectores.keySet().toString();
