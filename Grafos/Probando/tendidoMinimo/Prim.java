@@ -14,11 +14,10 @@ public class Prim {
 	public LinkedHashSet<String> prim(Grafo grafo) {
 		LinkedHashSet<String> visitados = new LinkedHashSet<String>(); 
 		Queue<Arista> colaPrioridad = new PriorityQueue<Arista>(new PrioridadDePeso());
-	
+		
 		String destino = grafo.getColeccionDeAristas().keySet().iterator().next();
-		
+
 		visitados.add(destino);
-		
 		for(Arista arista : grafo.getArestasDeSalidaDel(destino)) {
 			if(!visitados.contains(arista.getDestino().getNombre())) {
 				colaPrioridad.add(arista);
@@ -69,8 +68,8 @@ public class Prim {
 		grafo.agregarArista(new Vertice("V3"),new Vertice("V4"), 2);
 		grafo.agregarArista(new Vertice("V5"),new Vertice("V3"), 8);
 		grafo.agregarArista(new Vertice("V3"),new Vertice("V5"), 8);
-		grafo.agregarArista(new Vertice("V6"),new Vertice("V3"), 4);
 		grafo.agregarArista(new Vertice("V3"),new Vertice("V6"), 4);
+		grafo.agregarArista(new Vertice("V6"),new Vertice("V3"), 4);
 		grafo.agregarArista(new Vertice("V6"),new Vertice("V4"), 6);
 		grafo.agregarArista(new Vertice("V4"),new Vertice("V6"), 6);
 		grafo.agregarArista(new Vertice("V5"),new Vertice("V6"), 1);
