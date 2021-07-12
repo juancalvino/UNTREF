@@ -8,12 +8,12 @@ import java.io.IOException;
 
 public class Lector {
 
-	Juego juego = new Juego();
 	
-	public void cargarArchivo(String pArchivo) {
+	public static void cargarArchivo(String pArchivo) {
 
 		FileReader archivo = null;
 		BufferedReader lector = null;
+		int lineaNumero = 0;
 
 		try {
 			archivo = new FileReader(pArchivo);
@@ -21,46 +21,54 @@ public class Lector {
 			String linea;
 
 			while ((linea = lector.readLine()) != null) {
+				++lineaNumero;
+				
 				try {
 					cargarLinea(linea);
+				}
+				catch (NumberFormatException e) {
+					System.err.println("Linea:"+ lineaNumero +" el valor " + e + " no es un numero");
+				}
+				catch (ValorDeDadosEx e) {
+					System.err.println("Linea:" + lineaNumero + " " +e);
 				}
 				catch (ArrayIndexOutOfBoundsException e) {
 					e.printStackTrace();
 				}
 			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
+		} 
+		catch (FileNotFoundException e) {
+			System.err.println("linea:"+ lineaNumero + " no se encontro el archivo" + e);
+		} 
+		catch (IOException e) {
+			System.err.println("linea:"+ lineaNumero + " IO exception" + e);
+		} 
+		finally {
 			if (archivo != null)
 				try {
 					archivo.close();
-				} catch (IOException e) {
-					e.printStackTrace();
+				} 
+				catch (IOException e) {
+					System.err.println("linea:"+ lineaNumero + " IO exception" + e);			
 				}
+			System.out.println("Ultima linea leida " + lineaNumero);
 		}
 	}
 	
 	
-	private void cargarLinea(String linea) {
+	private static void cargarLinea(String linea) throws NumberFormatException, ValorDeDadosEx{
+		
 		linea.trim();
 
 		String[] datosSegmentados = linea.split(",");
 		
-		try {
-			int jugador = Integer.parseInt(datosSegmentados[0]);
+			String jugador = datosSegmentados[0];
 			int dado1 = Integer.parseInt(datosSegmentados[1]);
 			int dado2 = Integer.parseInt(datosSegmentados[2]);
 			int dado3 = Integer.parseInt(datosSegmentados[3]);
+			
+			Juego.getJuego().ingresarJugada(jugador, new int[]{dado1,dado2,dado3});
 		
-			int[] jugada = {dado1,dado2,dado3};
-
-			juego.ingresarJugada(jugador, jugada);
-		}
-		catch (NumberFormatException e) {
-			e.getStackTrace();
-		}
 		
 		
 		

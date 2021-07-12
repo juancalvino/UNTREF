@@ -9,6 +9,6 @@ public class PuntajesDeJugador implements Comparator<Jugador> {
 		if(jugador1.getPuntaje() < jugador2.getPuntaje()) {
 			return 1;
 		}
-		return 0;
+		return -1;
 	}
 }

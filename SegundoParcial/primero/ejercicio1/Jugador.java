@@ -2,11 +2,11 @@ package ejercicio1;
 
 import java.util.Arrays;
 
-public class Jugador {
+public class Jugador{
 
 	private int puntajeTotal;
 	private String nombre;
-	int[] mejoresJugadas;
+	private int[] mejoresJugadas;
 	
 	
 	public Jugador(String nombre) {
@@ -23,6 +23,10 @@ public class Jugador {
 		return this.puntajeTotal;
 	}
 	
+	public String getNombre() {
+		return this.nombre;
+	}
+	
 	public void addJugada(int puntajeJugada) {
 		Arrays.sort(mejoresJugadas);
 		if(puntajeJugada > mejoresJugadas[0]) {
@@ -37,4 +41,10 @@ public class Jugador {
 		return this.nombre;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		Jugador otro = (Jugador) obj;
+		return this.nombre.equals(otro.getNombre());
+	}
+	
 }
