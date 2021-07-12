@@ -1,6 +1,5 @@
 package UML;
 
-
 public class Murcielago extends Mamifero implements Volador {
 
 	public Murcielago(String nombre, boolean energiaDeGanancia) {
@@ -9,7 +8,7 @@ public class Murcielago extends Mamifero implements Volador {
 
 	@Override
 	public void volar() {
-		System.out.println( getNombre() + " volando ...");
+		System.out.println(getNombre() + " volando ...");
 	}
 
 	@Override

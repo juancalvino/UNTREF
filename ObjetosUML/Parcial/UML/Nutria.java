@@ -8,11 +8,11 @@ public class Nutria extends Mamifero implements Nadador {
 
 	@Override
 	protected double calcularEnergiaExtra() {
-		return ENERGIA_NETA_MANTENIMIENTO *0.1;
+		return ENERGIA_NETA_MANTENIMIENTO * 0.1;
 	}
 
 	@Override
 	public void nadar() {
-		System.out.println( getNombre() + " nadando ...");
+		System.out.println(getNombre() + " nadando ...");
 	}
-}	
+}

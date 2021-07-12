@@ -10,6 +10,7 @@
 	<classpathentry kind="src" path="EnClase"/>
 	<classpathentry kind="src" path="Slack"/>
 	<classpathentry kind="src" path="Probando"/>
+	<classpathentry kind="src" path="Fabi"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

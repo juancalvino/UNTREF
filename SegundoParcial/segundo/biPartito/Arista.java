@@ -1,5 +1,4 @@
-package grafo;
-
+package biPartito;
 public class Arista {
 
 	private Vertice verticeDestino;

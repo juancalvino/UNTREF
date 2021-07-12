@@ -5,7 +5,11 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="primero"/>
+	<classpathentry kind="src" path="cola"/>
+	<classpathentry kind="src" path="recursiva"/>
+	<classpathentry kind="src" path="segundo"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

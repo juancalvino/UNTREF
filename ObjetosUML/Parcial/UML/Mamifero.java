@@ -1,6 +1,6 @@
 package UML;
 
-public abstract class Mamifero extends Animal{
+public abstract class Mamifero extends Animal {
 
 	public Mamifero(String nombre, boolean energiaDeGanancia) {
 		super(nombre, energiaDeGanancia);

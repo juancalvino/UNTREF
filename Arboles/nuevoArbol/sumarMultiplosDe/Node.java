@@ -11,6 +11,7 @@ public class Node {
 		left = null;
 	}
 
+	
 	public void printPreOrder() {
 		System.out.print(" " + value + " ");
 		if (left != null)

@@ -1,5 +1,4 @@
-package grafo;
-
+package fabi;
 public class Arista {
 
 	private Vertice verticeDestino;
